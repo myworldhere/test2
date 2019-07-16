@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+</head>
+<hr>
+<ul>
+{% for book in list %}
+    <li><a href="details/{{ book.id }}">{{ book.title }}--{{ book.read }}--{{ book.comment }}</a></li>
+{% endfor %}
+</ul>
+<hr>
+{#{{ max }}#}
+<h1><a href="area">地区</a></h1>
+</body>
+</html>

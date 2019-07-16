@@ -34,7 +34,7 @@ class BookInfo(models.Model):
     books2 = BookInfoManager()
 
     def __str__(self):
-        return self.title.encode('utf8')
+        return self.title.encode('utf-8')
 
 
 class HeroInfo(models.Model):
@@ -43,3 +43,8 @@ class HeroInfo(models.Model):
     content = models.CharField(max_length=1000)
     isDelete = models.BooleanField(default=False)
     book = models.ForeignKey(BookInfo)
+
+
+class AreaInfo(models.Model):
+    title = models.CharField(max_length=20)
+    parent = models.ForeignKey('self', null=True, blank=True)
